@@ -31,25 +31,18 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text("AppBar")),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              textDirection: TextDirection.ltr,
-              children: [
-                containerBuild(bgColor: Colors.yellow, w: 60, h: 100),
-                containerBuild(bgColor: Colors.red, w: 60, h: 200),
-                containerBuild(bgColor: Colors.green, w: 60, h: 400),
-                containerBuild(bgColor: Colors.blue, w: 60, h: 500),
-              ],
-            ),
-          ],
-        ),
-      ),
+          appBar: AppBar(title: const Text("AppBar")),
+          body: Column(children: [
+            Expanded(
+                flex: 30,
+                child: containerBuild(w: double.infinity, h: double.infinity)),
+            Expanded(
+                flex: 60,
+                child: containerBuild(w: double.infinity, h: double.infinity)),
+            Expanded(
+                flex: 10,
+                child: containerBuild(w: double.infinity, h: double.infinity)),
+          ])),
     );
   }
 }
